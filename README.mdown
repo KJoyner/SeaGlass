@@ -1,0 +1,54 @@
+SeaGlass
+========
+
+SeaGlass is a collection of re-usable iOS UI classes. Currently, there are two classes available 
+but I plan to add additional UI and general utility classes in the future.
+
+Adding SeaGlass to your project
+===============================
+
+The SeaGlass Xcode project is setup to support easy integration into an Xcode 4 workspace.
+
+1. In Xcode 4, add SeaGlass as a sibling project to your app project. Do not add SeaGlass as a 
+   cross-project reference in your app project.
+
+2. In your app project, select your app target, under the Build Phases tab, expand the Link Binary
+   with Libraries group and add the SeaGlass library.
+
+3. In your app project, add the SeaGlass asset bundle (found in the SeaGlass project under the
+   Resources group). The easist way to do this is by dragging the SeaGlass.bundle to your project.
+   You can also add by selecting your app target, under the Build Phases tab, expand the Copy Bundle
+   Resources group and add the SeaGlass.bundle.
+
+4. If this is the first time you have linked to a static library within your app project, you will
+   need to add the -ObjC and -all_load flags to your apps Other Linker Flags. Do this by selecting
+   your app target, under the Build Settings tab, search for Other Linker. Under Other Linker 
+   Flags, add the flags -ObjC and -all_load. They should appear in that order.
+
+Overview
+========
+
+SGPopoverController 
+-------------------
+
+This is an alternative to UIPopoverController. Unlike UIPopoverController, this controller is 
+meant to work on all devices, including the iPhone. It offers a similar (public) interface with
+some limitations but also provides some additional capabilities and customization options.
+
+SGRatingControl
+---------------
+
+This is a simple rating control like that found in the App Store or iPod apps.
+
+Compatibility
+=============
+
+These classes work with iOS 4.0 and above.
+
+
+Documentation
+=============
+
+Documentation can be generated using Doxygen. Install Doxygen if you do not already have it 
+installed. From Doxygen, open the Docs/Doxyfile. Generated files will be in Docs/build.
+

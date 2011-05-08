@@ -1,0 +1,24 @@
+//
+//  SeaglassControllerDemo-Prefix.pch
+//  SeaglassControlsDemo
+//
+//  Copyright (c) 2011 Ken Joyner.
+//  http://kjoyner.com
+//
+//  Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+//
+
+//
+// Prefix header for all source files of the 'SeaglassControlsDemo' target in the 'SeaglassControlsDemo' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iPhone SDK 3.0 and later."
+#endif
+
+#ifdef __OBJC__
+  #import <Foundation/Foundation.h>
+  #import <UIKit/UIKit.h>
+#endif

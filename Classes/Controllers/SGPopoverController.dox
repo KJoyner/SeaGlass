@@ -1,0 +1,203 @@
+//! @interface SGPopoverController
+//!
+//! @brief SGPopoverController is an alternative to UIPopoverController. Unlike UIPopoverController, 
+//!        this controller is meant to work on all devices, including the iPhone. It offers a 
+//!        similar (public) interface with some limitations but provides additional capabilities and 
+//!        customization options. 
+//!
+//! Like the UIPopoverController class, this class is used to manage the presentation of content in
+//! a popover. The popover remains visible until the user taps outside of the popover window but 
+//! within the "contained view" (unless modal or the tap was on a passthrough view) or you 
+//! explicitly dismiss it. 
+//!
+//! To display a popover, create an instance of this class and present it with the presentPopover 
+//! method. When initializing an instance of this class, you must provide a content controller that 
+//! provides the content for the popover. Popovers normally derive their size from the content 
+//! controller they present. However, you can change the size of the popover by modifying the value
+//! in the popoverContentSize property or by calling the setPopoverContentSize:animated: method. The 
+//! size you specify is just the preferred size for the popover’s view. The actual size may be 
+//! altered depending on other property values.
+//!
+//! By default, taps outside of the popover window cause the popover to be dismissed automatically. 
+//! To allow the user to interact with other views and not dismiss the popover, you can assign one 
+//! or more views to the passthroughViews property. Taps inside the popover window do not 
+//! automatically cause the popover to be dismissed. Your view and view controller code must handle 
+//! actions and events inside the popover explicitly and call the dismissPopoverAnimated: method as 
+//! needed.
+//!
+//! You can assign a delegate to the popover to manage interactions with the popover and receive 
+//! notifications about its dismissal.
+//!
+//! Known Behavoir differences between this control and UIPopoverController are:
+//! <ol>
+//!   <li>Works on all iOS devices.</li>
+//!
+//!   <li>The view controller argument is a protocol that has a number of methods and properties 
+//!       which match a UIViewController. I have had success with some limititations using a 
+//!       UIViewController object; however, Apple does not recommend using multiple view controllers 
+//!       to manage different portions of the same view hierarchy. See the section on View Content
+//!       Controller Notes for additional information and guidelines.</li>
+//!
+//!   <li>There are limitiations and guidelines associated with device rotation. See the section on 
+//!       Device Rotation Notes for additional information.</li>
+//!
+//!   <li>UIPopoverController uses a property (contentSizeForViewInPopover) within your content view 
+//!       controller as the default size for popovers. In UIViewControllers, the default of this 
+//!       property is 320x1100 and was only meant for iPad devices. This control uses a more 
+//!       complicated approach to determine the default popover size. See the section on Content 
+//!       Popover Size Notes for additional information.</li>
+//!
+//!   <li>Collisions with the keyboard are not handled. This is only a problem if the popover and 
+//!       keyboard are meant to interact on the screen at the same time.</li>
+//!
+//!   <li>You cannot attach the popover directly to a UIBarButtonItem. This really only matters for 
+//!       automatic repositioning during device rotation (see section on Device Rotation Notes). For
+//!       more information on how to get the anchor rectangle for a UIBarButtonItem, see the section 
+//!       on Anchor Notes.</li>
+//!
+//!   <li>This control can exist off screen (e.g. in a scroll view).</li>
+//!
+//!   <li>The appearance of this control is configurable.</li>
+//! </ol>
+//! <h2>View Content Controller Guidelines</h2>
+//!
+//! As noted earlier, Apple recommends against having a view managed by another UIViewController 
+//! being placed inside another view being managed by a UIViewController object (unless it is one of 
+//! their UIViewController container classes. This popover class creates a container view for the 
+//! content view being managed by the content view controller and then places this container view 
+//! inside the view used for presenting the popover.
+//!
+//! To strictly follow Apple's guidelines, you need to create an object derived from NSObject that 
+//! implements the protocol SGPopoverContentViewController. This does require you to rewrite some 
+//! functionality that would normally be handled by the UIViewController class.
+//!
+//! I have been successful and provided test cases that use a custom UIViewController, custom 
+//! UITableViewController and a custom UINavigationController for the SGPopoverContentController. 
+//! This works with some limitations without the use of any non-public APIs.
+//!
+//! Some of the limitations are:
+//! <ol>
+//!   <li>Messages associated with device rotation are not automatically sent to the Content View 
+//!       Controller. See the section on Device Rotation Notes for additional information and 
+//!       guidelines on how to handle device rotation.</li>
+//!
+//!   <li>The properties interfaceOrientation and parentViewController are not set/updated in the 
+//!       Content View Controller.</li>
+//!
+//!   <li>There may be other properties and messages not received that I have not yet seen.</li>
+//!
+//!   <li>If using a UINavigationController and pushing additional views then those views should be 
+//!       the same size as the original view. This may be able to be fixed but I have not looked 
+//!       into it.</li>
+//!
+//!   <li>If using a UINavigationController, presenting a modal view anywhere down in the chain of 
+//!       controllers does not work. Don't do it.</li>
+//!
+//!   <li>There may be additional problems that I am not aware of when using a 
+//!       UINavigationController as the content view.</li>
+//!
+//!   <li>There may be problems with the view controllers not being properly inserted into the 
+//!       responder chain. I am not yet aware of specific problems but this is something that may 
+//!       turn out to have some issues.</li>
+//! </ol>
+//! Having said all this, using the approach of implementing a custom controller from NSObject in 
+//! effect has many of the same limitations but they will be more obvious because the custom 
+//! controller will have different properties and methods than the UIViewController (for example, 
+//! there will be no method to present a modal dialog).
+//!
+//! <h2>Presentation View Guidelines</h2>
+//!
+//! If you want to disable all user inteaction except that meant for the popover, you should present 
+//! the popover, either modal or non-modal, into the root view. If you want to present but still 
+//! allow the user to intereact with other the view in which you are presenting into, then specify 
+//! that view as a passthrough view before presenting into. 
+//!
+//! To present in the root view, you can do one of the following:
+//! <ol>
+//!   <li>Pass the view.window.rootViewController.view for the inView argument when presenting the 
+//!       popover.</li>
+//!   <ul>
+//!     <li>The view.window argument will be nil if the view hasn't been added to a window.</li>
+//!
+//!     <li>If you support anything other than portrait mode, then for proper display, your 
+//!         root-level view must follow the recommended approach of having a transform applied to it 
+//!         in order to support rotation.</li>
+//!  
+//!     <li>Convert the anchor to coordinates relative to the root level view. I do this using 
+//!         the UIView convertRect:toView method.</li>
+//!   </ul> 
+//!   <li>Pass the view.window as the inView argument when presenting the popover.</li> 
+//!   <ul>
+//!     <li>This will only work in portrait mode and will not work with device rotation.</li>
+//!
+//!     <li>Convert the anchor to coordinates relative to the window. This can be done using the 
+//!         UUView convertRect:toView method.</li>
+//!   </ul>
+//! </ol>
+//! I like the first approach because it supports orientations other than Portrait. However, it 
+//! depends upon the top-level view not behaving badly when a subview is added. So far, I havn't 
+//! found a situation where this does not work.
+//! 
+//! <b>Device Rotation Guidelines</b>
+//!
+//! There are a number of limitations and guidelines you need to be aware of if your application 
+//! supports device orientation.
+//!
+//! Unless presenting into a scroll view, you will probably want to disable rotation when the 
+//! popover is displayed. The easiest way to do this is add a check to the method 
+//! shouldAutorotateToInterfaceOrientation: that returns NO for all rotations other than the one in 
+//! affect when the popover was first displayed.
+//!
+//! It is possible to support rotating a modal popover by dismissing and re-presenting the popover 
+//! in the didRotateFromInterfaceOrientation:. 
+//!
+//! When the device does rotate, content view controllers will not receive view rotation events nor 
+//! can they depend on the interfaceOrientation property or calls to the method 
+//! shouldAutorotateToInterfaceOrientation:, rotatingHeaderView, and rotatingFooterView. As a 
+//! work-around, you can setup to receive a notification when the device orientation changes.
+//!
+//! Finally, if the content controller does need to resize the popover, then it must either notify 
+//! the view presenting the popover or maintain the popover as a member variable (make sure not to 
+//! retain it or you will create a circular reference).
+//!
+//! <b>Content Popover Size Notes</b>
+//!
+//! UIPopoverController uses a property (contentSizeForViewInPopover) within your content view 
+//! controller as the default size for popovers. The default of this property is 320x1100 and was 
+//! only meant for iPad devices. Therefore, the following method is used to determine the default 
+//! size:
+//! <ul>
+//!   <li>If running on the iPad and this property is provide then it will be used.</li>
+//!   <li>If running on other devices besides the iPad and this property is provided and not equal
+//!       to 320x1100 then it will be used.<li>
+//!   <li>If content view controllers view size is non-zer, then this will be used.</li>
+//!   <li>Otherwise, we will use a default of:<li>
+//!     <ul>
+//!       <li>For Width,  320.0 minus the container view margins and insets will be used</li>
+//!       <li>For Height, 800.0 will be used on the iPad and 400.0 will be used on all other 
+//!           devices.</li>
+//!     </ul>
+//! </ul>
+//! <b>Anchor Notes</b>
+//! 
+//! The easiest way to get the anchor rectangle for a UIBarButtonItem is to specify a selector that 
+//! expects the event argument and use the event argument to find your anchor. There is one slight 
+//! complication to this is that the selector may be triggered when user clicks close to it but is 
+//! on the status bar. In this case, the event will not contain the view information needed to 
+//! create an anchor. Therefore, you can either ignore the event (the item will still show respond 
+//! by moving to and from the selected state) or create an anchor by some oether means 
+//! (i.e. hardcoding, anchor to a portion of the UINavigationBar/UIToolBar, etc.). 
+//!
+//! Here is the code I typically use to anchor to a UIBarButtonItem:
+//! @code
+//!   if ([event respondsToSelector:@selector(allTouches)])
+//!   {
+//!     UIView* itemView = [[event.allTouches anyObject] view];
+//!     anchor = [itemView convertRect:itemView.bounds toView:primaryView];
+//!   }
+//!   else
+//!   {
+//!     // we ignore the event and just return if we cannot determine an anchor
+//!     return;
+//!   }
+//! @endcode

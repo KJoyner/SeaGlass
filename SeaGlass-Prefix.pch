@@ -1,0 +1,17 @@
+//
+//  SGRating-Prefix.pch
+//  SeaGlass
+//
+//  Copyright (c) 2011 Ken Joyner.
+//  http://kjoyner.com
+//
+//  Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+//
+
+// Prefix header for all source files of the 'SeaGlass' target in the 'SeaGlass' project
+//
+
+#ifdef __OBJC__
+  #import <Foundation/Foundation.h>
+  #import <UIKit/UIKit.h>
+#endif
