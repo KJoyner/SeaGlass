@@ -286,7 +286,8 @@
     arrowFrame          = hArrowFrame;
     popoverContentFrame = hPopoverContentFrame;
   }
-  
+    
+  popoverContentFrame = CGRectIntegral(popoverContentFrame);
   CGRect popoverFrame = CGRectUnion(popoverContentFrame, arrowFrame);
 
   UIImage* bgImage = [self bgImageForPopoverContentFrame:popoverContentFrame 
