@@ -498,7 +498,7 @@ typedef enum
                                                  action:@selector(dismissOnTap:)] autorelease];
       self.tapGesture = gesture;
     
-      gesture.cancelsTouchesInView = NO;
+      gesture.cancelsTouchesInView = YES;
       [tapGestureView addGestureRecognizer:gesture];
     }
   }
