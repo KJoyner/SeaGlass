@@ -368,6 +368,9 @@
 /* Begin PBXProject section */
 		BED53BE21377312F0048877E /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+			};
 			buildConfigurationList = BED53BE51377312F0048877E /* Build configuration list for PBXProject "SeaGlass" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -523,6 +526,7 @@
 				DSTROOT = /tmp/SeaGlass.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SeaGlass-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -536,6 +540,7 @@
 				DSTROOT = /tmp/SeaGlass.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SeaGlass-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
