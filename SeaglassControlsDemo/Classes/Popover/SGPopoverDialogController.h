@@ -16,11 +16,11 @@
 
 @interface SGPopoverDialogController : UIViewController <SGPopoverContentViewController>
 {
-  id<SGPopoverDialogControllerDelegate> i_delegate;
-  SGPopoverController* i_sgParentPopoverController;
+  id<SGPopoverDialogControllerDelegate> __unsafe_unretained i_delegate;
+  SGPopoverController* __unsafe_unretained i_sgParentPopoverController;
 }
 
-@property(nonatomic, assign) id<SGPopoverDialogControllerDelegate> delegate;
+@property(nonatomic, unsafe_unretained) id<SGPopoverDialogControllerDelegate> delegate;
 
 - (IBAction) resizeAction;
 - (IBAction) dismissAction;

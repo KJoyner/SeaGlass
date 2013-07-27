@@ -87,13 +87,6 @@ static CGFloat kDefaultHitArea = 42.0f;  // (7 * 42) + (2 * 13) = 320.0
 }
 
 
-- (void) dealloc
-{
-	[i_nonRatedImage release];
-	[i_ratedImage release];
-	
-  [super dealloc];
-}
 
 
 //! Determine the best size for this control.

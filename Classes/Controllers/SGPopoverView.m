@@ -22,7 +22,7 @@
 @interface SGPopoverView()
 
 @property(nonatomic, assign) SGPopoverArrowDirection arrowDirection;
-@property(nonatomic, retain) UIView* popoverView;
+@property(nonatomic, strong) UIView* popoverView;
 
 - (UIImage *) bgImageForPopoverContentFrame:(CGRect)popoverContentFrame 
                                popoverFrame:(CGRect)popoverFrame 
@@ -78,16 +78,6 @@
 }
 
 
-- (void) dealloc 
-{
-  [i_contentView release];
-  [i_passthroughViews release];
-  [i_properties release];
-  
-  [i_popoverView release];
-    
-  [super dealloc];
-}
 
 
 - (void) setAnchor:(CGRect)anchor
@@ -113,11 +103,8 @@
 {
   if (i_contentView != contentView)
   {
-    [i_contentView autorelease];
-    [i_contentView release];
-    
-    i_contentView = [contentView retain];
-    [self setNeedsLayout];
+      i_contentView = contentView;
+      [self setNeedsLayout];
   }
 }
 
@@ -150,11 +137,8 @@
 {
   if (i_properties != properties)
   {
-    [i_properties autorelease];
-    [i_properties release];
-    
-    i_properties = [properties retain];
-    [self setNeedsLayout];
+        i_properties = properties;
+        [self setNeedsLayout];
   }
 }
 
@@ -837,7 +821,7 @@
   popoverFrame.origin.x -= containerViewFrame.origin.x;
   popoverFrame.origin.y -= containerViewFrame.origin.y;
 
-  UIView* popoverView = [[[UIView alloc] initWithFrame:popoverFrame] autorelease];
+  UIView* popoverView = [[UIView alloc] initWithFrame:popoverFrame];
   
   popoverView.clipsToBounds = YES;
   popoverView.userInteractionEnabled = YES;

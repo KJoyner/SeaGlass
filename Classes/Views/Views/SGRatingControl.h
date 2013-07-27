@@ -41,10 +41,10 @@
 @property(nonatomic, assign) CGFloat hitArea;
 
 //! Image that represents a non-rated setting.
-@property(nonatomic, retain) UIImage* nonRatedImage;
+@property(nonatomic, strong) UIImage* nonRatedImage;
 
 //! Image that represents a rated setting.
-@property(nonatomic, retain) UIImage* ratedImage;
+@property(nonatomic, strong) UIImage* ratedImage;
 
 //! Disables the check for toggling the last rating value off.
 //!

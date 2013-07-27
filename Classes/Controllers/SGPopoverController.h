@@ -25,7 +25,7 @@
 @private
   CGRect                             i_clipFrame;
   id<SGPopoverContentViewController> i_contentViewController;
-  id<SGPopoverControllerDelegate>    i_delegate;
+  id<SGPopoverControllerDelegate>    __unsafe_unretained i_delegate;
   CGRect                             i_displayFrame;
   CGRect                             i_overlayFrame;
   BOOL                               i_modal;
@@ -48,11 +48,11 @@
 //! to the content view controller passed to the initWithPopoverContentViewController: method. You
 //! can change the value of this property later to swap content views (also, see the method
 //! setContentViewController:animated:). 
-@property(nonatomic, retain) id<SGPopoverContentViewController> contentViewController;
+@property(nonatomic, strong) id<SGPopoverContentViewController> contentViewController;
 
 //! The delegate to receive popover controller messages. For more information, see the 
 //! SGPopoverControllerDelegate protocol.
-@property(nonatomic, assign) id<SGPopoverControllerDelegate> delegate;
+@property(nonatomic, assign) id<SGPopoverControllerDelegate> __unsafe_unretained delegate;
 
 //! The popover location and arrow direction will be determined based upon this frame. Preference 
 //! will be given to display popover in this frame; however, if needed the popover may extend
@@ -103,7 +103,7 @@
 //! The view properties for customizing how a popover looks. This includes the background image,
 //! arrow images, margins, content insets, etc. For more information, see the class 
 //! SGPopoverViewProperties.
-@property(nonatomic, retain) SGPopoverViewProperties* properties;
+@property(nonatomic, strong) SGPopoverViewProperties* properties;
 
 
 // Initializing the Popover

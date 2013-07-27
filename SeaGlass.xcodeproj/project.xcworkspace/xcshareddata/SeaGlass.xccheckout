@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>303EF7C5-EC2D-4D75-8445-AB79381DFCB7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SeaGlass</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5980DD29-76A5-4619-9A39-9B73B87EA351</key>
+		<string>ssh://github.com/BrettThePark/SeaGlass.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>SeaGlass.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5980DD29-76A5-4619-9A39-9B73B87EA351</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/BrettThePark/SeaGlass.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>5980DD29-76A5-4619-9A39-9B73B87EA351</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5980DD29-76A5-4619-9A39-9B73B87EA351</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SeaGlass</string>
+		</dict>
+	</array>
+</dict>
+</plist>

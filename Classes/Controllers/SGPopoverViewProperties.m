@@ -58,7 +58,7 @@ static CGFloat kContentInset = 4.0f;
   self = [super init];
   if (self != nil)
   {
-    i_bgImageName    = [SGPathForBundleImageResource(kBgImageName, kImageType) retain];
+    i_bgImageName    = SGPathForBundleImageResource(kBgImageName, kImageType);
     i_leftBgCapWidth = kBgCapSize;
     i_topBgCapHeight = kBgCapSize;
     
@@ -70,26 +70,15 @@ static CGFloat kContentInset = 4.0f;
     // by default, margins should not enchroach outside the display area
     i_enchroachment = 0.0f;
     
-    i_upArrowImageName    = [SGPathForBundleImageResource(kUpArrowImageName, kImageType) retain];
-    i_downArrowImageName  = [SGPathForBundleImageResource(kDownArrowImageName, kImageType) retain];
-    i_leftArrowImageName  = [SGPathForBundleImageResource(kLeftArrowImageName, kImageType) retain];
-    i_rightArrowImageName = [SGPathForBundleImageResource(kRightArrowImageName, kImageType) retain];
+    i_upArrowImageName    = SGPathForBundleImageResource(kUpArrowImageName, kImageType);
+    i_downArrowImageName  = SGPathForBundleImageResource(kDownArrowImageName, kImageType);
+    i_leftArrowImageName  = SGPathForBundleImageResource(kLeftArrowImageName, kImageType);
+    i_rightArrowImageName = SGPathForBundleImageResource(kRightArrowImageName, kImageType);
   }  
   return self;
 }
 
 
-- (void)dealloc 
-{
-  [i_bgImageName release];
-  
-  [i_upArrowImageName release];
-  [i_downArrowImageName release];
-  [i_leftArrowImageName release];
-  [i_rightArrowImageName release];
-  
-  [super dealloc];
-}
 
 
 - (void) setBackgroundImageName:(NSString *)name 

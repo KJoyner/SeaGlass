@@ -18,8 +18,8 @@
   UILabel* i_currentRatingLabel;
 }
 
-@property(nonatomic, retain) IBOutlet SGRatingControl* ratingControl;
-@property(nonatomic, retain) IBOutlet UILabel* currentRatingLabel;
+@property(nonatomic, strong) IBOutlet SGRatingControl* ratingControl;
+@property(nonatomic, strong) IBOutlet UILabel* currentRatingLabel;
 
 - (IBAction) ratingChanged;
 

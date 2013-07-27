@@ -60,7 +60,7 @@
     
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   if (cell == nil) {
-    cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
   }
     
   NSUInteger row = indexPath.row;
@@ -87,10 +87,10 @@
   switch (row)
   {
     case 0:
-      controller = [[[SGPopoverDemoController alloc] init] autorelease]; 
+      controller = [[SGPopoverDemoController alloc] init]; 
       break;
     case 1:
-      controller = [[[SGRatingController alloc] initWithNibName:@"SGRatingController" bundle:nil] autorelease];
+      controller = [[SGRatingController alloc] initWithNibName:@"SGRatingController" bundle:nil];
       break;
   }
 
@@ -98,9 +98,5 @@
     [self.navigationController pushViewController:controller animated:YES];
 }
 
-- (void)dealloc
-{
-    [super dealloc];
-}
 
 @end
