@@ -19,7 +19,7 @@
 @interface SGPopoverArrowDirectionOptionController : UITableViewController 
   <SGPopoverContentViewController>
 
-@property(nonatomic, assign) id<SGPopoverArrowDirectionOptionControllerDelegate> delegate;
+@property(nonatomic, unsafe_unretained) id<SGPopoverArrowDirectionOptionControllerDelegate> delegate;
 @property(nonatomic, assign) SGPopoverArrowDirectionOptions option;
 
 @end

@@ -19,7 +19,7 @@
 @interface SGPopoverModalOptionController : UITableViewController 
   <SGPopoverContentViewController>
 
-@property(nonatomic, assign) id<SGPopoverModalOptionControllerDelegate> delegate;
+@property(nonatomic, unsafe_unretained) id<SGPopoverModalOptionControllerDelegate> delegate;
 @property(nonatomic, assign) SGPopoverModalOptions option;
 
 @end

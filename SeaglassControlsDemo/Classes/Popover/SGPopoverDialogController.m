@@ -1,4 +1,4 @@
-//
+    //
 //  PopoverController1.m
 //  SeaGlass
 //
@@ -28,10 +28,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -47,6 +43,7 @@
 {
   [super viewDidLoad];
   // Do any additional setup after loading the view from its nib.
+    [self dismissAction];
 }
  
 - (void)viewDidUnload

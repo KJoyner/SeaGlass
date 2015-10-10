@@ -36,10 +36,6 @@
 }
 
 
-- (void)dealloc
-{
-  [super dealloc];
-}
 
 
 - (NSString*) optionTextForOption:(NSUInteger)option
@@ -86,7 +82,7 @@
   UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   if (cell == nil) 
   {
-    cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:13.0];
   }      

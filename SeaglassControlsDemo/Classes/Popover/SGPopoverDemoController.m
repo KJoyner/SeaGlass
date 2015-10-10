@@ -25,8 +25,8 @@
 
 @property(nonatomic, assign) SGPopoverArrowDirectionOptions arrowDirectionOption;
 @property(nonatomic, assign) SGPopoverModalOptions modalOption;
-@property(nonatomic, retain) SGPopoverController*  systemPopover;
-@property(nonatomic, retain) SGPopoverController*  tablePopover;
+@property(nonatomic, strong) SGPopoverController*  systemPopover;
+@property(nonatomic, strong) SGPopoverController*  tablePopover;
 
 - (void) configureModalOption:(UIBarButtonItem *)item event:(UIEvent *)event;
 
@@ -51,13 +51,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-  [i_systemPopover release];
-  [i_tablePopover release];
-  
-  [super dealloc];
-}
 
 #pragma mark - View lifecycle
 
@@ -67,32 +60,32 @@
   
   self.title = @"Popovers Demo";
   
-  UIBarButtonItem* item = [[[UIBarButtonItem alloc] 
+  UIBarButtonItem* item = [[UIBarButtonItem alloc] 
                             initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
                             target:self 
-                            action:@selector(configureModalOption:event:)] autorelease];
+                            action:@selector(configureModalOption:event:)];
   self.navigationItem.rightBarButtonItem = item;
 
   
   self.navigationController.toolbarHidden = NO;
   NSMutableArray* toolbarItems = [NSMutableArray arrayWithCapacity:4];
   
-  UIBarButtonItem* item1 = [[[UIBarButtonItem alloc] 
+  UIBarButtonItem* item1 = [[UIBarButtonItem alloc] 
     initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
                          target:self 
-                         action:@selector(configureModalOption:event:)] autorelease];
+                         action:@selector(configureModalOption:event:)];
   [toolbarItems addObject:item1];
   
-  UIBarButtonItem* spacer = [[[UIBarButtonItem alloc] 
+  UIBarButtonItem* spacer = [[UIBarButtonItem alloc] 
     initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace 
                          target:nil
-                         action:nil] autorelease];
+                         action:nil];
   [toolbarItems addObject:spacer];
   
-  UIBarButtonItem* item2 = [[[UIBarButtonItem alloc] 
+  UIBarButtonItem* item2 = [[UIBarButtonItem alloc] 
     initWithBarButtonSystemItem:UIBarButtonSystemItemAdd 
                          target:self 
-                         action:@selector(configureArrowDirectionOption:event:)] autorelease];
+                         action:@selector(configureArrowDirectionOption:event:)];
                          
   [toolbarItems addObject:item2];
   self.toolbarItems = toolbarItems;
@@ -163,12 +156,12 @@
   }
   
   SGPopoverArrowDirectionOptionController* controller = 
-    [[[SGPopoverArrowDirectionOptionController alloc] init] autorelease];
+    [[SGPopoverArrowDirectionOptionController alloc] init];
   controller.delegate = self;
   controller.option = self.arrowDirectionOption;
     
   SGPopoverController* popover = 
-    [[[SGPopoverController alloc] initWithContentViewController:controller] autorelease];
+    [[SGPopoverController alloc] initWithContentViewController:controller];
   popover.delegate = self;
     
   // we are presenting inside the root view
@@ -204,12 +197,12 @@
     return;
   }
 
-  SGPopoverModalOptionController* controller = [[[SGPopoverModalOptionController alloc] init] autorelease];
+  SGPopoverModalOptionController* controller = [[SGPopoverModalOptionController alloc] init];
   controller.delegate = self;
   controller.option = self.modalOption;
 
   SGPopoverController* popover = 
-    [[[SGPopoverController alloc] initWithContentViewController:controller] autorelease];
+    [[SGPopoverController alloc] initWithContentViewController:controller];
   popover.delegate = self;
   
   // we are presenting inside the primary view
@@ -260,7 +253,7 @@
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   if (cell == nil) 
   {
-    cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
+    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
   }
   
   NSUInteger row = indexPath.row;
@@ -294,11 +287,11 @@
     return;
     
   SGPopoverDialogController* contentController = 
-    [[[SGPopoverDialogController alloc] init] autorelease];
+    [[SGPopoverDialogController alloc] init];
   contentController.delegate = self;
     
-  SGPopoverController* popover = [[[SGPopoverController alloc] 
-                                   initWithContentViewController:contentController] autorelease];
+  SGPopoverController* popover = [[SGPopoverController alloc] 
+                                   initWithContentViewController:contentController];
   popover.delegate = self;
 
   UIView* inView = tableView.window.rootViewController.view;

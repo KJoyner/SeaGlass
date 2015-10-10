@@ -10,8 +10,6 @@
 
 #import "SGGlobalPaths.h"
 
-#import "SGSynthesizeSingleton.h"
-
 static NSString* kSGBundleName = @"SeaGlass";
 
 @interface SGBundle : NSBundle
@@ -25,7 +23,15 @@ static NSString* kSGBundleName = @"SeaGlass";
 
 @implementation SGBundle
 
-SG_SYNTHESIZE_SINGLETON_FOR_CLASS(SGBundle)
++ (id)sharedSGBundle
+{
+    static dispatch_once_t pred = 0;
+    __strong static id _sharedObject = nil;
+    dispatch_once(&pred, ^{
+        _sharedObject = [[self alloc] init]; // or some other init method
+    });
+    return _sharedObject;
+}
 
 - (id)init
 {

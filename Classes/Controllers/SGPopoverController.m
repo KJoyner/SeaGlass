@@ -28,9 +28,9 @@ typedef enum
 
 @interface SGPopoverController()
 
-@property(nonatomic, retain) UITapGestureRecognizer* tapGesture;
+@property(nonatomic, strong) UITapGestureRecognizer* tapGesture;
 @property(nonatomic, assign) NSUInteger              userSetTrackedProperites;
-@property(nonatomic, retain) SGPopoverView*          view;
+@property(nonatomic, strong) SGPopoverView*          view;
 
 @property(nonatomic, getter=isPopoverVisible) BOOL   popoverVisible;
 
@@ -81,7 +81,7 @@ typedef enum
   self = [super init];  
   if (self != nil) 
   {
-    i_contentViewController = [controller retain];
+    i_contentViewController = controller;
     i_popoverContentSize = [controller contentSizeForViewInPopover];
     i_modal = YES;
     
@@ -110,14 +110,8 @@ typedef enum
   if ([i_contentViewController respondsToSelector:@selector(setSgParentPopoverController:)])
     [i_contentViewController setSgParentPopoverController:nil];
   
-  [i_contentViewController release];
-  [i_passthroughViews release];
-  [i_properties release]; 
   
-  [i_tapGesture release];
-  [i_view release];
       
-  [super dealloc];
 }
 
 
@@ -188,10 +182,10 @@ typedef enum
       [i_contentViewController setSgParentPopoverController:nil];
 
     // need to save so we can notify content view controller that it did disappear    
-    id<SGPopoverContentViewController> previousController = [i_contentViewController autorelease];
+    id<SGPopoverContentViewController> previousController = i_contentViewController;
     
     // now we are working with the new content view controller
-    i_contentViewController = [controller retain];
+    i_contentViewController = controller;
     
     // new content view is now managed by this popover    
     if ([i_contentViewController respondsToSelector:@selector(setSgParentPopoverController:)])
@@ -458,7 +452,7 @@ typedef enum
   [self setDefaultFramePropertiesForView:inView];
   [self setDefaultPopoverContentSize];
   
-  SGPopoverView* view = [[[SGPopoverView alloc] init] autorelease];
+  SGPopoverView* view = [[SGPopoverView alloc] init];
   
   view.anchor       = anchor;
   view.clipFrame     = self.clipFrame;
@@ -494,11 +488,11 @@ typedef enum
     if (tapGestureView != nil)
     {
       UITapGestureRecognizer* gesture =
-        [[[UITapGestureRecognizer alloc] initWithTarget:self 
-                                                 action:@selector(dismissOnTap:)] autorelease];
+        [[UITapGestureRecognizer alloc] initWithTarget:self 
+                                                 action:@selector(dismissOnTap:)];
       self.tapGesture = gesture;
     
-      gesture.cancelsTouchesInView = NO;
+      gesture.cancelsTouchesInView = YES;
       [tapGestureView addGestureRecognizer:gesture];
     }
   }
@@ -592,9 +586,7 @@ typedef enum
   
     if ([self.delegate respondsToSelector:@selector(popoverControllerDidDismissPopover:)])
     {
-      // this will allow user to release popover during callback
-      [[self retain] autorelease];
-      
+      // this will allow user to release popover during callback      
       [self.delegate popoverControllerDidDismissPopover:self]; 
     }
   }

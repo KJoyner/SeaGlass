@@ -27,13 +27,11 @@
 		BEEB4D12137DF73100AA4C4A /* SGRatingControl.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEB4D0A137DF73100AA4C4A /* SGRatingControl.m */; };
 		BEEB4D65137E07E900AA4C4A /* SGGlobalPaths.h in Headers */ = {isa = PBXBuildFile; fileRef = BEEB4D63137E07E900AA4C4A /* SGGlobalPaths.h */; };
 		BEEB4D66137E07E900AA4C4A /* SGGlobalPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEB4D64137E07E900AA4C4A /* SGGlobalPaths.m */; };
-		BEEB4DA9137F362700AA4C4A /* SGSynthesizeSingleton.h in Headers */ = {isa = PBXBuildFile; fileRef = BEEB4DA8137F362700AA4C4A /* SGSynthesizeSingleton.h */; };
 		BEEB4DCB137F62BA00AA4C4A /* SGPopoverDialogController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEB4DC0137F62BA00AA4C4A /* SGPopoverDialogController.m */; };
 		BEEB4DCD137F62BA00AA4C4A /* SGPopoverModalOptionController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEB4DC6137F62BA00AA4C4A /* SGPopoverModalOptionController.m */; };
 		BEEB4DCE137F62BA00AA4C4A /* SGPopoverArrowDirectionOptionController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEB4DC7137F62BA00AA4C4A /* SGPopoverArrowDirectionOptionController.m */; };
 		BEEB4DDA137F88EE00AA4C4A /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEEB4DD8137F88EE00AA4C4A /* MainWindow.xib */; };
 		BEEB4DDB137F88EE00AA4C4A /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEEB4DD9137F88EE00AA4C4A /* RootViewController.xib */; };
-		BEEB4DEC137F8AD600AA4C4A /* SGSynthesizeSingleton.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BEEB4DA8137F362700AA4C4A /* SGSynthesizeSingleton.h */; };
 		BEEB4DED137F8AD600AA4C4A /* SGGlobalPaths.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BEEB4D63137E07E900AA4C4A /* SGGlobalPaths.h */; };
 		BEEB4DEE137F8B2700AA4C4A /* SGPopoverDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEB4DBE137F62BA00AA4C4A /* SGPopoverDemoController.m */; };
 		BEEB4DF0137F8B2700AA4C4A /* SGRatingController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEEB4DD5137F87E800AA4C4A /* SGRatingController.m */; };
@@ -45,6 +43,7 @@
 		BEEB4DF6137F8B7A00AA4C4A /* SGRatingController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEEB4DD2137F878400AA4C4A /* SGRatingController.xib */; };
 		BEEB4E0D137FA56800AA4C4A /* SGPopoverContentViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BE4B15B3137B8A8E00563E90 /* SGPopoverContentViewController.h */; };
 		BEEB4E0F137FA59600AA4C4A /* SGRatingControl.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BEEB4D09137DF73100AA4C4A /* SGRatingControl.h */; };
+		C8FFD52417A4207D00728A4C /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C8FFD52317A4207D00728A4C /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -56,7 +55,6 @@
 			files = (
 				BEEB4E0F137FA59600AA4C4A /* SGRatingControl.h in CopyFiles */,
 				BEEB4E0D137FA56800AA4C4A /* SGPopoverContentViewController.h in CopyFiles */,
-				BEEB4DEC137F8AD600AA4C4A /* SGSynthesizeSingleton.h in CopyFiles */,
 				BEEB4DED137F8AD600AA4C4A /* SGGlobalPaths.h in CopyFiles */,
 				BE50AA9E1377375100E98160 /* SGPopoverController.h in CopyFiles */,
 				BE50AA9F1377375100E98160 /* SGPopoverViewProperties.h in CopyFiles */,
@@ -77,14 +75,14 @@
 
 /* Begin PBXFileReference section */
 		BE2EB3DB1381F6310052DC55 /* SeaGlass.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SeaGlass.bundle; sourceTree = "<group>"; };
-		BE4B15B3137B8A8E00563E90 /* SGPopoverContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPopoverContentViewController.h; sourceTree = "<group>"; };
-		BE4B15C6137C433800563E90 /* SGPopoverController.dox */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SGPopoverController.dox; sourceTree = "<group>"; };
-		BE50AA90137736FD00E98160 /* SGPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPopoverController.m; sourceTree = "<group>"; };
-		BE50AA91137736FD00E98160 /* SGPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPopoverController.h; sourceTree = "<group>"; };
-		BE50AA92137736FD00E98160 /* SGPopoverViewProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGPopoverViewProperties.m; path = ../Controllers/SGPopoverViewProperties.m; sourceTree = "<group>"; };
+		BE4B15B3137B8A8E00563E90 /* SGPopoverContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SGPopoverContentViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		BE4B15C6137C433800563E90 /* SGPopoverController.dox */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; lineEnding = 0; path = SGPopoverController.dox; sourceTree = "<group>"; };
+		BE50AA90137736FD00E98160 /* SGPopoverController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SGPopoverController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		BE50AA91137736FD00E98160 /* SGPopoverController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SGPopoverController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		BE50AA92137736FD00E98160 /* SGPopoverViewProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = SGPopoverViewProperties.m; path = ../Controllers/SGPopoverViewProperties.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		BE50AA93137736FD00E98160 /* SGPopoverViewProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGPopoverViewProperties.h; path = ../Controllers/SGPopoverViewProperties.h; sourceTree = "<group>"; };
-		BE50AA94137736FD00E98160 /* SGPopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGPopoverView.m; path = ../Controllers/SGPopoverView.m; sourceTree = "<group>"; };
-		BE50AA95137736FD00E98160 /* SGPopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGPopoverView.h; path = ../Controllers/SGPopoverView.h; sourceTree = "<group>"; };
+		BE50AA94137736FD00E98160 /* SGPopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = SGPopoverView.m; path = ../Controllers/SGPopoverView.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		BE50AA95137736FD00E98160 /* SGPopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SGPopoverView.h; path = ../Controllers/SGPopoverView.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		BE50AB281377418E00E98160 /* SeaglassControlsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeaglassControlsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE50AB8113775ABC00E98160 /* SGControls.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SGControls.bundle; path = ../../Resources/SGControls.bundle; sourceTree = "<group>"; };
 		BED53BEB1377312F0048877E /* libSeaGlass.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSeaGlass.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -92,13 +90,12 @@
 		BED53BF21377312F0048877E /* SeaGlass-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SeaGlass-Prefix.pch"; path = "../SeaGlass-Prefix.pch"; sourceTree = "<group>"; };
 		BED53BF91377312F0048877E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BED53BFC1377312F0048877E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		BEEB4D09137DF73100AA4C4A /* SGRatingControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGRatingControl.h; path = Views/SGRatingControl.h; sourceTree = "<group>"; };
+		BEEB4D09137DF73100AA4C4A /* SGRatingControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; name = SGRatingControl.h; path = Views/SGRatingControl.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		BEEB4D0A137DF73100AA4C4A /* SGRatingControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGRatingControl.m; path = Views/SGRatingControl.m; sourceTree = "<group>"; };
 		BEEB4D63137E07E900AA4C4A /* SGGlobalPaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGGlobalPaths.h; sourceTree = "<group>"; };
 		BEEB4D64137E07E900AA4C4A /* SGGlobalPaths.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGGlobalPaths.m; sourceTree = "<group>"; };
-		BEEB4DA8137F362700AA4C4A /* SGSynthesizeSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGSynthesizeSingleton.h; sourceTree = "<group>"; };
-		BEEB4DBE137F62BA00AA4C4A /* SGPopoverDemoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPopoverDemoController.m; sourceTree = "<group>"; };
-		BEEB4DC0137F62BA00AA4C4A /* SGPopoverDialogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPopoverDialogController.m; sourceTree = "<group>"; };
+		BEEB4DBE137F62BA00AA4C4A /* SGPopoverDemoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SGPopoverDemoController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		BEEB4DC0137F62BA00AA4C4A /* SGPopoverDialogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = SGPopoverDialogController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		BEEB4DC1137F62BA00AA4C4A /* SGPopoverDialogController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPopoverDialogController.h; sourceTree = "<group>"; };
 		BEEB4DC3137F62BA00AA4C4A /* SGPopoverModalOptionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPopoverModalOptionController.h; sourceTree = "<group>"; };
 		BEEB4DC4137F62BA00AA4C4A /* SGPopoverDemoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPopoverDemoController.h; sourceTree = "<group>"; };
@@ -113,13 +110,14 @@
 		BEEB4DD8137F88EE00AA4C4A /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		BEEB4DD9137F88EE00AA4C4A /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		BEEB4DDC137F896200AA4C4A /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		BEEB4DDD137F896200AA4C4A /* SGControlsDemoAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGControlsDemoAppDelegate.h; sourceTree = "<group>"; };
+		BEEB4DDD137F896200AA4C4A /* SGControlsDemoAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = SGControlsDemoAppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		BEEB4DDE137F896200AA4C4A /* SGControlsDemoAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGControlsDemoAppDelegate.m; sourceTree = "<group>"; };
 		BEEB4DDF137F896200AA4C4A /* SeaglassControlsDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SeaglassControlsDemo-Prefix.pch"; sourceTree = "<group>"; };
 		BEEB4DE0137F896200AA4C4A /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		BEEB4DE1137F896200AA4C4A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BEEB4DE9137F8A2C00AA4C4A /* SeaglassControlsDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SeaglassControlsDemo-Info.plist"; sourceTree = "<group>"; };
 		BEEB4DEB137F8A6600AA4C4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		C8FFD52317A4207D00728A4C /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +198,7 @@
 		BED53BE01377312F0048877E = {
 			isa = PBXGroup;
 			children = (
+				C8FFD52317A4207D00728A4C /* Default-568h@2x.png */,
 				BE50AA7B137735E800E98160 /* Classes */,
 				BE50AB5013774C1700E98160 /* Resources */,
 				BED53BEB1377312F0048877E /* libSeaGlass.a */,
@@ -230,7 +229,6 @@
 		BEEB4D62137E074000AA4C4A /* Global */ = {
 			isa = PBXGroup;
 			children = (
-				BEEB4DA8137F362700AA4C4A /* SGSynthesizeSingleton.h */,
 				BEEB4D63137E07E900AA4C4A /* SGGlobalPaths.h */,
 				BEEB4D64137E07E900AA4C4A /* SGGlobalPaths.m */,
 			);
@@ -320,7 +318,6 @@
 				BE4B15B4137B8A8E00563E90 /* SGPopoverContentViewController.h in Headers */,
 				BEEB4D11137DF73100AA4C4A /* SGRatingControl.h in Headers */,
 				BEEB4D65137E07E900AA4C4A /* SGGlobalPaths.h in Headers */,
-				BEEB4DA9137F362700AA4C4A /* SGSynthesizeSingleton.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +365,9 @@
 /* Begin PBXProject section */
 		BED53BE21377312F0048877E /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+			};
 			buildConfigurationList = BED53BE51377312F0048877E /* Build configuration list for PBXProject "SeaGlass" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -396,6 +396,7 @@
 				BEEB4DF6137F8B7A00AA4C4A /* SGRatingController.xib in Resources */,
 				BEEB4DDA137F88EE00AA4C4A /* MainWindow.xib in Resources */,
 				BEEB4DDB137F88EE00AA4C4A /* RootViewController.xib in Resources */,
+				C8FFD52417A4207D00728A4C /* Default-568h@2x.png in Resources */,
 				BE2EB3DC1381F6310052DC55 /* SeaGlass.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -448,6 +449,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -459,6 +461,7 @@
 					"-ObjC",
 					"-all_load",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kjoyner.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WARNING_CFLAGS = "-Wfloat-equal";
 				WRAPPER_EXTENSION = app;
@@ -469,6 +472,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -480,6 +484,7 @@
 					"-ObjC",
 					"-all_load",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.kjoyner.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 				WARNING_CFLAGS = "-Wfloat-equal";
@@ -490,7 +495,8 @@
 		BED53C0C1377312F0048877E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "";
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -499,6 +505,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -506,7 +513,7 @@
 		BED53C0D1377312F0048877E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -520,9 +527,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/SeaGlass.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SeaGlass-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -533,9 +543,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				DSTROOT = /tmp/SeaGlass.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SeaGlass-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
